@@ -1,0 +1,79 @@
+
+##服务名
+spring:
+  application:
+    name: Cloud-Eureka
+
+####################################################################################################################
+eureka:
+  client:
+    ## 是否将自己注册到eureka-server,默认为true
+    register-with-eureka: false
+    ## 是否从eureka-server获取注册信息
+    fetch-registry: false
+    ## 设置服务注册中心的url
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka/
+
+  server:
+    ## 自我保护
+    enable-self-preservation: false
+    ## 自我保护阈值
+    renewal-percent-threshold: 0.85
+    ## 剔除服务的间隔时间
+    eviction-interval-timer-in-ms: 1000
+    ## 关闭从readOnly读取注册表
+    use-read-only-response-cache: false
+    ## 二级缓存(readWrite)与三级缓存(readOnly)的同步时间间隔
+    response-cache-update-interval-ms: 1000
+    ## 失效服务间隔
+
+
+####################################################################################################################
+
+  ## 开启所有断点监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  ## 开启远程关闭功能
+  endpoint:
+    shutdown:
+      enabled: true
+
+
+
+####################################################################################################################
+
+
+## 集群
+#---
+#spring:
+#  profiles: 7900
+#server:
+#  port: 7900
+#eureka:
+#  instance:
+#    hostname: eureka-7900
+#
+#
+#---
+#spring:
+#  profiles: 7901
+#server:
+#  port: 7901
+#eureka:
+#  instance:
+#    hostname: eureka-7901
+#
+#
+#
+#---
+#spring:
+#  profiles: 7902
+#server:
+#  port: 7902
+#eureka:
+#  instance:
+#    hostname: eureka-7902
