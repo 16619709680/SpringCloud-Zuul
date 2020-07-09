@@ -34,8 +34,6 @@ public class MyController2 {
     LoadBalancerClient loadBalancerClient;
 
 
-    @Autowired
-    RestTemplate restTemplate;
 
     @RequestMapping("/client6")
     public Object client6() {
@@ -95,7 +93,7 @@ public class MyController2 {
     public Object client8() {
 
         String url = "http://Eureka-Client/hi";
-
+        RestTemplate restTemplate = new RestTemplate();
         String forObject = restTemplate.getForObject(url, String.class);
 
         System.out.println(forObject);
