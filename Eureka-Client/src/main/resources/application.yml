@@ -1,23 +1,23 @@
-
-##服务名
 spring:
   application:
     name: Eureka-Client
 server:
-  port: 8088
-####################################################################################################################
+  port: 9000
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka/
-    ## eureka客户端多久拉取注册表信息，默认30秒，对于api-gateway，如果要迅速获取服务注册状态，可以缩小该值，比如5秒
     registry-fetch-interval-seconds: 30
-
+    healthcheck:
+      enabled: true
 
   instance:
-      ## 续约默认发送间隔30秒，心跳间隔
+    metadata-map:
+      age: 18
+      name: 666
+      address: zoonm
       lease-renewal-interval-in-seconds: 30
-      ## 续约到期时间 默认90
       lease-expiration-duration-in-seconds: 60
 
 
