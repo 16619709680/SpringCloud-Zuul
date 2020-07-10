@@ -2,22 +2,21 @@
 spring:
   application:
     name: Cloud-Eureka
+#  security:
+#    user:
+#      name: 123
+#      password: 123
 
 
 eureka:
   client:
-
     register-with-eureka: false
-
     fetch-registry: false
-
     service-url:
       defaultZone: http://eureka-7900:8080/eureka/
 
   server:
-
     enable-self-preservation: true
-
     renewal-percent-threshold: 0.85
 
 #    eviction-interval-timer-in-ms: 1000
@@ -42,5 +41,4 @@ management:
   endpoint:
     shutdown:
       enabled: true
-
 

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Eureka-Client
+    name: client
 server:
   port: 9010
 
@@ -20,4 +20,5 @@ eureka:
       lease-renewal-interval-in-seconds: 30
       lease-expiration-duration-in-seconds: 60
 
-
+ribbon:
+    NFLoadBalancerRuleClassName:  com.netflix.loadbalancer.RoundRobinRule
