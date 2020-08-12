@@ -1,0 +1,25 @@
+server:
+  port: 90
+spring:
+  application:
+    name: cloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-A:8080/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+zuul:
+  routes:
+    provider:
+      path: /provider/**
+      service-id: provider
+
+ribbon:
+  eureka:
+    enabled: false
+
+provider:
+  ribbon:
+    listOfServers: http://localhost:91, http://localhost:92

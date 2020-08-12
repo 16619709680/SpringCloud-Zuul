@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: Cloud-Eureka
@@ -13,24 +12,27 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka-7900:8080/eureka/
+      defaultZone: http://eureka-A:8080/eureka/
+
+
 
   server:
     enable-self-preservation: true
     renewal-percent-threshold: 0.85
 
-#    eviction-interval-timer-in-ms: 1000
-#
-#    use-read-only-response-cache: false
-#
-#    response-cache-update-interval-ms: 1000
+    eviction-interval-timer-in-ms: 1000
+
+    use-read-only-response-cache: false
+
+    response-cache-update-interval-ms: 1000
 
   instance:
     metadata-map:
       age: 18
       name: zhangxiaoliu
       address: beijing
-
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
 
 management:
   endpoints:

@@ -22,9 +22,6 @@ public class MyController {
 
     /**
      * 服务上下线
-     *
-     * @param status
-     * @return
      */
     //http://localhost:91/health?status=true
     @GetMapping("/health")
@@ -61,9 +58,7 @@ public class MyController {
 
     @PostMapping("/postParam")
     public URI postParam(@RequestBody Person person, HttpServletResponse response) throws URISyntaxException {
-
         URI uri = new URI("http://www.baidu.com/s?wd=" + person.getName());
-
         return uri;
     }
 

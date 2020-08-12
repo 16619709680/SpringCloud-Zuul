@@ -1,11 +1,13 @@
 server:
-  port: 91
+  port: 92
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8080/eureka/
+      defaultZone: http://eureka-A:8080/eureka/
     healthcheck:
       enabled: true
+    register-with-eureka: true
+    fetch-registry: true
 spring:
   application:
     name: provider
