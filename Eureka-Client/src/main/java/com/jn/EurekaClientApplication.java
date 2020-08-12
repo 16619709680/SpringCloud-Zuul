@@ -26,7 +26,6 @@ public class EurekaClientApplication {
      */
     @Bean
     public IRule myRule(){
-
         return new RoundRobinRule();
         //return new RandomRule();
     }
